@@ -3,3 +3,32 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
+// const galleryContainer = document.querySelector('.gallery');
+
+// function createGalleryMarkup (images) {
+//     return images.map(({preview, original, description}) =>
+//     `<li class="gallery__item">
+//             <a class="gallery__link" href='${original}'>
+//                 <img
+//                     class="gallery__image"
+//                     src='${preview}'
+//                     data-source='${original}'
+//                     alt='${description}'
+//                 />
+//             </a>
+//         </li>`
+    
+//     ).join("");
+// }
+
+// const galleryMarkup = createGalleryMarkup(galleryItems);
+// galleryContainer.insertAdjacentHTML('afterbegin', galleryMarkup);
+
+const gallery = document.querySelector('.gallery');
+    const markup = galleryItems.map(({preview, original, description}) =>
+`<li class="gallery__item">
+   <a class="gallery__link" href='${original}'>
+      <img class="gallery__image" src = '${preview}' data-source='${original}' alt='${description}' />
+   </a>
+</li>`);
+gallery.insertAdjacentHTML('afterbegin', markup.join(''));
