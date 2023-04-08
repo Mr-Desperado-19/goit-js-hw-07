@@ -32,3 +32,26 @@ const gallery = document.querySelector('.gallery');
    </a>
 </li>`);
 gallery.insertAdjacentHTML('afterbegin', markup.join(''));
+
+gallery.addEventListener('click', onClick);
+
+function onClick(evt) {
+
+   evt.preventDefault();
+
+   const imgGalleryEl = evt.target.classList.contains('gallery__image');
+
+
+   if (!imgGalleryEl) {
+      return;
+   }
+
+};
+
+const originalImgUrl = evt.target.dataset.source;
+
+const instance = basicLightbox.create(`
+    <img src="${originalImgUrl}" width="800" height="600">
+`)
+
+instance.show()
