@@ -46,8 +46,6 @@ function onClick(evt) {
       return;
    }
 
-};
-
 const originalImgUrl = evt.target.dataset.source;
 
 const instance = basicLightbox.create(`
@@ -55,3 +53,5 @@ const instance = basicLightbox.create(`
 `)
 
 instance.show()
+
+};
